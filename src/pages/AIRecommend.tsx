@@ -173,18 +173,6 @@ export default function AIRecommend() {
     // 这里可以调用API提交反馈
   };
 
-  const handleAddToCompare = (code: string) => {
-    if (compareList.includes(code)) {
-      setCompareList(compareList.filter(c => c !== code));
-      return;
-    }
-    if (compareList.length >= 3) {
-      alert('最多只能对比3只股票');
-      return;
-    }
-    setCompareList([...compareList, code]);
-  };
-
   const handleAddToWatchlist = (code: string) => {
     setAddedStocks(prev => new Set([...prev, code]));
   };
